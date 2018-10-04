@@ -1,4 +1,4 @@
-declare module 'klasa-rawevents' {
+declare module 'klasa-raw-events' {
 
 	import {
 		Client,
