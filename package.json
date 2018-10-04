@@ -1,64 +1,39 @@
 {
-  "_from": "github:QuantumPlugin/klasa-rawevents-plugin",
-  "_id": "klasa-rawevents@0.0.1",
-  "_inBundle": false,
-  "_integrity": "",
-  "_location": "/klasa-rawevents",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "git",
-    "raw": "QuantumPlugin/klasa-rawevents-plugin",
-    "rawSpec": "QuantumPlugin/klasa-rawevents-plugin",
-    "saveSpec": "github:QuantumPlugin/klasa-rawevents-plugin",
-    "fetchSpec": null,
-    "gitCommittish": null
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "github:QuantumPlugin/klasa-rawevents-plugin#61688d9fd602b47d8324acab31be66d48816295a",
-  "_spec": "QuantumPlugin/klasa-rawevents-plugin",
-  "_where": "C:\\Users\\Vlad\\Desktop\\Development\\G4M3R\\g4m3r-bot",
-  "author": {
-    "name": "QuantumlyTangled"
-  },
-  "bugs": {
-    "url": "https://github.com/QuantumPlugin/klasa-rawevents-plugin/issues"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
+  "name": "klasa-raw-events",
+  "author": "QuantumlyTangled",
   "description": "Klasa RawEvent Plugin: a plugin that adds a raw events store to klasa",
-  "devDependencies": {
-    "@types/node": "^10.5.8",
-    "docgen": "github:dirigeants/docsgen",
-    "eslint": "^5.3.0",
-    "eslint-config-klasa": "github:dirigeants/klasa-lint",
-    "eslint-plugin-markdown": "^1.0.0-beta.6",
-    "markdownlint-cli": "^0.12.0",
-    "tslint": "^5.11.0",
-    "typescript": "^3.0.1"
-  },
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "homepage": "https://github.com/QuantumPlugin/klasa-rawevents-plugin#readme",
   "license": "MIT",
+  "homepage": "https://github.com/KlasaCommunityPlugins/raw-events#readme",
+  "bugs": {
+    "url": "https://github.com/KlasaCommunityPlugins/raw-events/issues"
+  },
   "main": "src/index",
-  "name": "klasa-rawevents",
+  "typings": "typings/index.d.ts",
+  "version": "0.0.1",
   "peerDependencies": {
     "klasa": "github:dirigeants/klasa#master",
     "discord.js": "github:discordjs/discord.js#master"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QuantumPlugin/klasa-rawevents-plugin.git"
+    "url": "git+https://github.com/KlasaCommunityPlugins/raw-events#readme"
   },
   "scripts": {
     "docs": "npx dg --source src --custom guides/.docconfig.json --output docs/docs.json --logging",
     "lint": "npx eslint --fix src && npx eslint --fix --config .eslintrcmd.json --ext md guides && npx tslint --fix 'typings/*.ts'",
     "test": "npx eslint src && npx tslint 'typings/*.ts' && npx eslint --config .eslintrcmd.json --ext md guides && npx markdownlint guides README.md"
   },
-  "typings": "typings/index.d.ts",
-  "version": "0.0.1"
+  "devDependencies": {
+    "@types/node": "^10.11.4",
+    "docgen": "github:dirigeants/docsgen",
+    "eslint": "^5.6.1",
+    "eslint-config-klasa": "github:dirigeants/klasa-lint",
+    "eslint-plugin-markdown": "^1.0.0-beta.6",
+    "markdownlint-cli": "^0.13.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
 }
