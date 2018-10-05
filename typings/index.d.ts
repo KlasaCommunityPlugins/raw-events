@@ -41,12 +41,12 @@ declare module 'klasa-raw-events' {
 	};
 
 	export interface RawEventsClientOptions extends KlasaClientOptions {
-		pieceDefaults?: RawEventsClientPieceDefaults,
-		rawEventsOptions?: RawEventsClientSubOptions
+		pieceDefaults?: RawEventsClientPieceDefaults;
+		rawEventsOptions?: RawEventsClientSubOptions;
 	}
 
 	export interface RawEventsClientPieceDefaults extends KlasaPieceDefaults {
-		rawEvents?: RawEventOptions
+		rawEvents?: RawEventOptions;
 	}
 
 	export interface RawEventOptions extends PieceOptions {
@@ -55,8 +55,8 @@ declare module 'klasa-raw-events' {
 	}
 
 	export interface RawEventJSON extends PieceJSON {
-		event: string,
-		fullPacket: boolean
+		event: string;
+		fullPacket: boolean;
 	}
 
 	type DiscordRawEventT = 'READY' |

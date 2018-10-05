@@ -11,18 +11,23 @@ The installation can be done using github and soon NPM.
 ```sh
 npm install --save quantumlytangled/klasa-rawevents-plugin
 ```
+
 ### Using the plugin
 
 In your main file which contains
+
 ```js
 const { Client } = require('klasa');
 ```
+
 you need to put
+
 ```js
 const { Client } = require('klasa');
 
 Client.use(require('klasa-rawevents').Client);
 ```
+
 and then you can continue your bot as normal.
 
 ### Notes
