@@ -16,7 +16,7 @@ npm i KlasaCommunityPlugins/raw-events
 
 ```js
 const { Client } = require("klasa");
-Client.use(require("klasa-raw-events");
+Client.use(require("klasa-raw-events"));
 ```
 
 3. Create a new `raw-event` in your `rawEvents` folder.
