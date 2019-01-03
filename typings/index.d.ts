@@ -5,7 +5,7 @@ declare module 'klasa-raw-events' {
 		Piece,
 		Store,
 		KlasaClientOptions,
-		KlasaPieceDefaults,
+		PieceDefaults,
 		PieceOptions,
 		PieceJSON
 	} from 'klasa';
@@ -45,7 +45,7 @@ declare module 'klasa-raw-events' {
 		rawEventsOptions?: RawEventsClientSubOptions;
 	}
 
-	export interface RawEventsClientPieceDefaults extends KlasaPieceDefaults {
+	export interface RawEventsClientPieceDefaults extends PieceDefaults {
 		rawEvents?: RawEventOptions;
 	}
 
