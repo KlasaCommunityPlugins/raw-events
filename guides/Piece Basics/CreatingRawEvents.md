@@ -1,3 +1,0 @@
-## Creating Raw Events
-
-placeholder
