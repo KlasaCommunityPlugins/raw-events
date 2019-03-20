@@ -1,6 +1,6 @@
 {
   "name": "@kcp/raw-events",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A simple Raw Event Plugin that adds a simpler way to tap into raw events using klasa",
   "homepage": "https://github.com/KlasaCommunityPlugins/raw-events#readme",
   "bugs": {
