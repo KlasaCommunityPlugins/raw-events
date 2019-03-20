@@ -10,7 +10,7 @@ jobs:
 
   - template: docs.yml@templates
     parameters:
-      ghRef: 'github.com/KlasaCommunityPlugins/functions'
+      ghRef: 'github.com/KlasaCommunityPlugins/raw-events'
       targetBranch: 'docs'
       sync: 'false'
       dependsOn: Lint
