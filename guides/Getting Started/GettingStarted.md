@@ -9,7 +9,7 @@ The installation can be done using github and soon NPM.
 > I assume you know how to open a command prompt in a folder where you want to install this. Please don't prove me wrong.
 
 ```sh
-npm install --save quantumlytangled/klasa-rawevents-plugin
+npm install --save @kcp/raw-events
 ```
 
 ### Using the plugin
@@ -25,7 +25,7 @@ you need to put
 ```js
 const { Client } = require('klasa');
 
-Client.use(require('klasa-rawevents').Client);
+Client.use(require('@kcp/raw-events'));
 ```
 
 and then you can continue your bot as normal.

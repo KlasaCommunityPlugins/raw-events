@@ -1,20 +1,11 @@
-const { Client: { plugin } } = require('klasa');
-const CONSTANTS = require('./lib/util/CONSTANTS.js');
+import { Client as KlasaClient } from 'klasa';
 
-module.exports = {
-	Client: require('./lib/Client.js'),
-
-	constants: CONSTANTS,
-	CONSTANTS: CONSTANTS,
-	Constants: CONSTANTS,
-
-	RawEvent: require('./lib/structures/RawEvent.js'),
-	RawEventStore: require('./lib/structures/RawEventStore.js'),
-
-	rawEventListener: require('./events/raw.js'),
-
-	[plugin]: require('./lib/Client.js')[plugin]
-};
+import { RawEventClient as Client } from './lib/Client';
+export { Client };
+export { RawEvent } from './lib/structures/RawEvent';
+export { RawEventStore } from './lib/structures/RawEventStore';
+// @ts-ignore
+exports[KlasaClient.plugin] = Client[KlasaClient.plugin];
 
 /**
  * @external KlasaClient

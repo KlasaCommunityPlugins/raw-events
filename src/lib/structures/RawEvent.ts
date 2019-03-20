@@ -1,4 +1,12 @@
-const { Piece } = require('klasa');
+import { Piece, PieceJSON } from 'klasa';
+import { Client, RawEventStore } from '../..';
+import { DiscordRawPayload } from '../../events/re.raw';
+import { RawEventOptions } from '../Client';
+
+export interface RawEventJSON extends PieceJSON {
+	event: string;
+	fullPacket: boolean;
+}
 
 /**
  * Base class for all Klasa Raw Events. See {@tutorial CreatingRawEvents} for more information how to use this class
@@ -6,7 +14,9 @@ const { Piece } = require('klasa');
  * @tutorial CreatingRawEvents
  * @extends external:Piece
  */
-class RawEvent extends Piece {
+export class RawEvent extends Piece {
+	readonly event: string;
+	readonly fullPacket: boolean;
 
 	/**
 	 * @typedef {external:PieceOptions} RawEventOptions
@@ -22,8 +32,8 @@ class RawEvent extends Piece {
 	 * @param {boolean} core If the piece is in the core directory or not
 	 * @param {RawEventOptions} [options={}] Optional Event settings
 	 */
-	constructor(client, store, file, core, options = {}) {
-		super(client, store, file, core, options);
+	constructor(client: Client, store: RawEventStore, file: string[], directory: string, options: RawEventOptions = {}) {
+		super(client, store, file, directory, options);
 
 		/**
 		 * The event to listen for
@@ -37,7 +47,7 @@ class RawEvent extends Piece {
 		 * @since 0.0.1
 		 * @type {boolean}
 		 */
-		this.fullPacket = options.fullPacket;
+		this.fullPacket = Boolean(options.fullPacket);
 	}
 
 	/**
@@ -47,23 +57,20 @@ class RawEvent extends Piece {
 	 * @returns {void}
 	 * @abstract
 	 */
-	run() {
-		// Defined in extension Classes
-		throw new Error(`The run method has not been implemented by ${this.type}:${this.name}:${this.event}.`);
+	run(data: DiscordRawPayload | object | boolean | string | number): void;
+	run(): void {
+		throw new Error(`${this.type}::${this.name}: Run method was not overwritten!`);
 	}
 
 	/**
 	 * Defines the JSON.stringify behavior of this extendable.
 	 * @returns {Object}
 	 */
-	toJSON() {
+	toJSON(): RawEventJSON {
 		return {
 			...super.toJSON(),
 			event: this.event,
-			fullPacket: this.fullPacket
+			fullPacket: this.fullPacket,
 		};
 	}
-
 }
-
-module.exports = RawEvent;
