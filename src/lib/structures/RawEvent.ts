@@ -1,3 +1,4 @@
+// Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
 import { Piece, PieceJSON } from 'klasa';
 import { Client, RawEventStore } from '../..';
 import { DiscordRawPayload } from '../../events/re.raw';

@@ -1,3 +1,4 @@
+// Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
 import { Client, KlasaClientOptions, PieceOptions, util } from 'klasa';
 import { join } from 'path';
 import { RawEventStore } from './structures/RawEventStore';

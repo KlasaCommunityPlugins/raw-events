@@ -1,3 +1,4 @@
+// Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
 // tslint:disable-next-line
 const { Events } = require('discord.js/src/util/Constants');
 import { Event, EventStore, KlasaClient } from 'klasa';

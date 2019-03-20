@@ -1,3 +1,4 @@
+// Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
 import { Store } from 'klasa';
 import { RawEventClient } from '../Client';
 import { RawEvent } from './RawEvent';
