@@ -1,4 +1,4 @@
-# Raw Events [![Build Status](https://dev.azure.com/vladfrangu/KlasaCommunityPlugins/_apis/build/status/Raw%20Events?branchName=master)](https://dev.azure.com/vladfrangu/KlasaCommunityPlugins/_build/latest?definitionId=5&branchName=master)
+# Raw Events [![Build Status](https://dev.azure.com/klasacommunityplugins/Plugins/_apis/build/status/Raw%20Events?branchName=master)](https://dev.azure.com/klasacommunityplugins/Plugins/_build/latest?definitionId=3&branchName=master)
 
 A simple Klasa plugin which allows you to handle raw events with ease.
 
