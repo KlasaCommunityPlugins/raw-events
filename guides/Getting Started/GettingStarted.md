@@ -32,7 +32,7 @@ and then you can continue your bot as normal.
 
 ### Notes
 
-I suggest that you console log each planned raw event as the data might sometimes look diffrent than what discord.js formats in the normal events.
+I suggest that you console log each planned raw event as the data might sometimes look different than what discord.js formats in the normal events.
 
 ## Further Reading:
 
