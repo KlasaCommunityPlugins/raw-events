@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@kcp/lint": "github:KlasaCommunityPlugins/lint-files",
-    "@types/node": "^11.11.6",
+    "@types/node": "^11.12.2",
     "discord.js": "discordjs/discord.js",
     "docgen": "github:dirigeants/docsgen",
     "eslint": "^5.3.0",
