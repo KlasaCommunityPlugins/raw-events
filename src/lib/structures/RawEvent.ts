@@ -29,8 +29,8 @@ export class RawEvent extends Piece {
 	 * @since 0.0.1
 	 * @param {RawEventsClient} client The Klasa client
 	 * @param {RawEventStore} store The Event Store
-	 * @param {string} file The path from the pieces folder to the event file
-	 * @param {boolean} core If the piece is in the core directory or not
+	 * @param {string[]} file The path from the pieces folder to the event file
+	 * @param {string} directory The piece directory
 	 * @param {RawEventOptions} [options={}] Optional Event settings
 	 */
 	constructor(client: Client, store: RawEventStore, file: string[], directory: string, options: RawEventOptions = {}) {
