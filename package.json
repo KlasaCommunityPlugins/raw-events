@@ -15,7 +15,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KlasaCommunityPlugins/raw-events"
+    "url": "git+https://github.com/KlasaCommunityPlugins/raw-events.git"
   },
   "scripts": {
     "test:lint": "yarn tslint 'src/*.ts' && yarn eslint --config .eslintrcmd.json --ext md guides && yarn markdownlint guides README.md",
