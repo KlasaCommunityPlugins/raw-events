@@ -36,9 +36,8 @@ export class RawEventClient extends Client {
 		this.constructor[Client.plugin].call(this);
 	}
 
-	static [Client.plugin]() {
-		const typedThis = this as unknown as RawEventClient;
-		util.mergeDefault(OPTIONS, typedThis.options);
+	static [Client.plugin](this: RawEventClient) {
+		util.mergeDefault(OPTIONS, this.options);
 
 		const coreDirectory = join(__dirname, '..', '/');
 
@@ -48,12 +47,12 @@ export class RawEventClient extends Client {
 		 * @type {RawEventStore}
 		 * @name RawEventsClient#rawEvents
 		 */
-		typedThis.rawEvents = new RawEventStore(typedThis, coreDirectory);
+		this.rawEvents = new RawEventStore(this, coreDirectory);
 
-		typedThis.registerStore(typedThis.rawEvents);
+		this.registerStore(this.rawEvents);
 
 		// @ts-ignore
-		typedThis.events.registerCoreDirectory(coreDirectory);
+		this.events.registerCoreDirectory(coreDirectory);
 	}
 }
 
