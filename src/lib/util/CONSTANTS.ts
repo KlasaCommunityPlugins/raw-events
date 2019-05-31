@@ -1,12 +1,15 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
-export const OPTIONS = {
+import { KlasaClientOptions } from 'klasa';
+import TwoSidedMap from './TwoSidedMap';
+import Events from './EventsArray';
+
+export const OPTIONS: KlasaClientOptions = {
 	pieceDefaults: {
 		rawEvents: {
 			enabled: true,
-			fullPacket: false,
+			prettyName: false,
 		},
 	},
-	rawEventsOptions: {
-		prettyName: false,
-	},
 };
+
+export const DjsEvents: TwoSidedMap<string, string> = new TwoSidedMap(Events);

@@ -1,12 +1,12 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
 import { Piece, PieceJSON } from 'klasa';
 import { Client, RawEventStore } from '../..';
-import { DiscordRawPayload } from '../../events/re.raw';
 import { RawEventOptions } from '../Client';
 
 export interface RawEventJSON extends PieceJSON {
 	event: string;
-	fullPacket: boolean;
+	prettyName: boolean;
+	prettyNameValue: string;
 }
 
 /**
@@ -16,13 +16,26 @@ export interface RawEventJSON extends PieceJSON {
  * @extends external:Piece
  */
 export class RawEvent extends Piece {
+	/**
+	 * The event to listen for
+	 * @since 0.0.1
+	 * @type {string}
+	 */
 	readonly event: string;
-	readonly fullPacket: boolean;
+
+	/**
+	 * If the raw event should get the full packet object
+	 * @since 1.1.0
+	 * @type {boolean}
+	 */
+	readonly prettyName: boolean;
+
+	private readonly prettyNameValue: string;
 
 	/**
 	 * @typedef {external:PieceOptions} RawEventOptions
 	 * @property {string} [event=this.name] The event that should be listened to
-	 * @property {boolean} [fullPacket=false] Whether the file should recieve the full packet
+	 * @property {boolean} [prettName=false] Whether the file use the pascal naming for the event
 	 */
 
 	/**
@@ -36,19 +49,11 @@ export class RawEvent extends Piece {
 	constructor(client: Client, store: RawEventStore, file: string[], directory: string, options: RawEventOptions = {}) {
 		super(client, store, file, directory, options);
 
-		/**
-		 * The event to listen for
-		 * @since 0.0.1
-		 * @type {string}
-		 */
 		this.event = options.event || this.name;
 
-		/**
-		 * If the raw event should get the full packet object
-		 * @since 0.0.1
-		 * @type {boolean}
-		 */
-		this.fullPacket = Boolean(options.fullPacket);
+		this.prettyName = Boolean(options.prettyName);
+
+		this.prettyNameValue = this.event;
 	}
 
 	/**
@@ -58,7 +63,7 @@ export class RawEvent extends Piece {
 	 * @returns {void}
 	 * @abstract
 	 */
-	run(data: DiscordRawPayload | object | boolean | string | number): void;
+	run(data: object | boolean | string | number): void;
 	run(): void {
 		throw new Error(`${this.type}::${this.name}: Run method was not overwritten!`);
 	}
@@ -71,7 +76,8 @@ export class RawEvent extends Piece {
 		return {
 			...super.toJSON(),
 			event: this.event,
-			fullPacket: this.fullPacket,
+			prettyName: this.prettyName,
+			prettyNameValue: this.prettyNameValue,
 		};
 	}
 }

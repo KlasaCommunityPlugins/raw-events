@@ -6,7 +6,7 @@ import { OPTIONS } from './util/CONSTANTS';
 
 export interface RawEventOptions extends PieceOptions {
 	event?: string;
-	fullPacket?: boolean;
+	prettyName?: boolean;
 }
 
 /**
@@ -57,11 +57,6 @@ export class RawEventClient extends Client {
 }
 
 declare module 'klasa' {
-	interface KlasaClientOptions {
-		rawEventsOptions: {
-			prettyName: boolean;
-		};
-	}
 
 	interface PieceDefaults {
 		rawEvents?: RawEventOptions;
