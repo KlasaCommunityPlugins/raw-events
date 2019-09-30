@@ -1,6 +1,6 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
 import { Piece, PieceJSON } from 'klasa';
-import { Client, RawEventStore } from '../..';
+import { RawEventStore } from '../..';
 import { RawEventOptions } from '../Client';
 
 export interface RawEventJSON extends PieceJSON {
@@ -46,8 +46,8 @@ export class RawEvent extends Piece {
 	 * @param {string} directory The piece directory
 	 * @param {RawEventOptions} [options={}] Optional Event settings
 	 */
-	constructor(client: Client, store: RawEventStore, file: string[], directory: string, options: RawEventOptions = {}) {
-		super(client, store, file, directory, options);
+	constructor(store: RawEventStore, file: string[], directory: string, options: RawEventOptions = {}) {
+		super(store, file, directory, options);
 
 		this.event = options.event || this.name;
 
